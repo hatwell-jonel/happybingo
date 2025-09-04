@@ -1,6 +1,9 @@
+'use client';
+
 import { cn } from "@/lib/utils";
 import { SectionType } from "../page";
 import { Dices, Gamepad2, ScanFace, Smile, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -33,11 +36,29 @@ const data = [
 
 export default function FAQs({ sectionClass }: SectionType) {
   return (
-    <section className={cn("scroll-mt-16")} id="faqs">
+    <motion.section 
+      className={cn("scroll-mt-16")} id="faqs"
+      variants={{
+          hidden: { opacity: 0 },
+          show: { 
+            opacity: 1, 
+            transition: { staggerChildren: 0.2, duration: 1.3, ease: "easeIn" } 
+          }
+      }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="container-center">
         <h3 className="text-2xl xl:text-3xl mb-8 font-bold xl:mb-4">Frequently Asked Questions</h3>
 
-        <div className="mt-10 md:mt-15 xl:mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-20">
+        <motion.div 
+          className="mt-10 md:mt-15 xl:mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-20"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            show: { opacity: 1, y: 0, transition: { duration: 1.3, ease: "easeOut" } }
+          }}
+        >
 
           {
             data.map((item, index) => {
@@ -50,7 +71,7 @@ export default function FAQs({ sectionClass }: SectionType) {
               )
             })
           }
-        </div>
+        </motion.div>
 
 
         <div className="bg-[#F9FAFB] dark:bg-gray-900 rounded-lg p-8 my-16 xl:my-10 xl:flex xl:justify-between xl:items-center">
@@ -60,12 +81,12 @@ export default function FAQs({ sectionClass }: SectionType) {
             <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
           </div>
 
-          <button className="btn bg-brand mt-4 p-2 rounded font-bold text-[#A15C07] text-sm cursor-pointer" onClick={console.log("asdasd")}>
+          <button className="btn bg-brand mt-4 p-2 rounded font-bold text-[#A15C07] text-sm cursor-pointer">
               Get in Touch
           </button>
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }

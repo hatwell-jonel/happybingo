@@ -5,6 +5,7 @@ import ThemeToggler from '../ui/theme-toggle'
 import Link from 'next/link'
 import LogoHappybingo from '../logo'
 import { Dices, HandHelping, Menu, MessageCircleQuestionMark, Scale, Shield, User, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 const items = [
@@ -74,38 +75,48 @@ function MenuItemMobile({  activeSection, setActiveSection} : { activeSection: s
             <button onClick={() => setMenuOpen(!menuOpen)} className="p-2">
                 {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            {menuOpen && (
-                <>
-                    <div className="absolute top-14 left-0 w-full bg-white shadow-lg z-50 p-4">
-                        <ul className="flex flex-col gap-4">
-                            {items.map((item) => {
-                            const href = `/#${item.id}`
-                            return (
-                                <li key={item.label}>
-                                <Link
-                                    href={href}
-                                    onClick={() => {
-                                        setMenuOpen(false)
-                                        setActiveSection(item.id)
-                                    }}
-                                    className={`flex gap-4 font-semibold transition-colors py-2 px-4 rounded-md ${
-                                    activeSection === item.id
-                                        ? "bg-brand text-[#A15C07]"
-                                        : "text-gray-700"
-                                    }`}
-                                >
-                                    <span>
-                                        <item.icon className='inline mr-1 mb-1' size={16} />
-                                    </span>
-                                    {item.label}
-                                </Link>
-                                </li>
-                            )
-                            })}
-                        </ul>
-                    </div>
-                </>
-            )}
+
+            <AnimatePresence >
+                {menuOpen && (
+                    <>
+                        <motion.div 
+                            key="menu"
+                            className="absolute top-14 left-0 w-full bg-white shadow-lg z-50 p-4"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                        >
+                            <ul className="flex flex-col gap-4">
+                                {items.map((item) => {
+                                const href = `/#${item.id}`
+                                return (
+                                    <li key={item.label}>
+                                    <Link
+                                        href={href}
+                                        onClick={() => {
+                                            setMenuOpen(false)
+                                            setActiveSection(item.id)
+                                        }}
+                                        className={`flex gap-4 font-semibold transition-colors py-2 px-4 rounded-md ${
+                                        activeSection === item.id
+                                            ? "bg-brand text-[#A15C07]"
+                                            : "text-gray-700"
+                                        }`}
+                                    >
+                                        <span>
+                                            <item.icon className='inline mr-1 mb-1' size={16} />
+                                        </span>
+                                        {item.label}
+                                    </Link>
+                                    </li>
+                                )
+                                })}
+                            </ul>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
          </div>
     )
 }
@@ -151,4 +162,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header   
