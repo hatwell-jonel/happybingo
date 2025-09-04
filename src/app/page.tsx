@@ -7,6 +7,7 @@ import Betting101 from "./_sections/Betting101";
 import SupportAndHelplines from "./_sections/SupportAndHelplines";
 import FAQs from "./_sections/FAQs";
 import FairAndSafeGaming from "./_sections/FairAndSafeGaming";
+import A from "./_sections/A";
 
 export const metadata: Metadata = {
   title: "HappyBingo - Responsible Gaming",
@@ -27,7 +28,7 @@ export default function Page() {
       <WhatIsResponsibleGaming  sectionClass={sectionClass} />
       <WaysToLimitYourself sectionClass={sectionClass} />
       <Betting101 sectionClass={sectionClass} />
-      <SupportAndHelplines sectionClass={sectionClass} />
+      <SupportAndHelplines sectionClass={sectionClass}  />
       <FAQs sectionClass={sectionClass} />
       <FairAndSafeGaming sectionClass={sectionClass} />
     </main>
