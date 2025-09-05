@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@intercom/messenger-js-sdk':
+        specifier: ^0.0.17
+        version: 0.0.17
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.16
         version: 2.1.16(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -265,6 +268,9 @@ packages:
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [win32]
+
+  '@intercom/messenger-js-sdk@0.0.17':
+    resolution: {integrity: sha512-3PJt25plGYzj03tAyYjdBUvukGPkuEFJ+hIGovnUCYLH1wEMCRPc+oIRJFvp3AUybFg0fPbO7uWpzvi8/DqKKA==}
 
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
@@ -1185,6 +1191,8 @@ snapshots:
 
   '@img/sharp-win32-x64@0.34.3':
     optional: true
+
+  '@intercom/messenger-js-sdk@0.0.17': {}
 
   '@isaacs/fs-minipass@4.0.1':
     dependencies:

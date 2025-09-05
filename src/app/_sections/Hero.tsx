@@ -50,7 +50,7 @@ export default function Hero() {
             <Link 
               href="/#what-is-responsible-gaming" 
               className={cn(
-                "w-full text-center btn py-3 px-3 btn-brand text-[#A15C07] font-semibold bg-brand rounded-md mx-auto inline-block", 
+                "w-full text-center btn py-3 px-3 btn-brand font-bold text-[#7A3E00] bg-brand rounded-md mx-auto inline-block", 
                 classbreakpoints.md.findoutmore, 
                 classbreakpoints.lg.findoutmore
               )}

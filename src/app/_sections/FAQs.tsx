@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { SectionType } from "../page";
 import { Dices, Gamepad2, ScanFace, Smile, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
+import { show } from '@intercom/messenger-js-sdk'
 
 const data = [
   {
@@ -81,7 +82,7 @@ export default function FAQs({ sectionClass }: SectionType) {
             <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
           </div>
 
-          <button className="btn bg-brand mt-4 p-2 rounded font-bold text-[#A15C07] text-sm cursor-pointer">
+          <button className="btn bg-brand mt-4 p-2 rounded font-bold text-[#7A3E00] text-sm cursor-pointer max-w-[230px]" onClick={() => show()}>
               Get in Touch
           </button>
         </div>

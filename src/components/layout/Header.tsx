@@ -73,7 +73,7 @@ function MenuItemMobile({  activeSection, setActiveSection} : { activeSection: s
     return (
          <div className="xl:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="p-2">
-                {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                {menuOpen ? <X size={24} aria-label="Toggle menu" /> : <Menu size={24} aria-label="Toggle menu" />}
             </button>
 
             <AnimatePresence >

@@ -7,7 +7,9 @@ import Betting101 from "./_sections/Betting101";
 import SupportAndHelplines from "./_sections/SupportAndHelplines";
 import FAQs from "./_sections/FAQs";
 import FairAndSafeGaming from "./_sections/FairAndSafeGaming";
-import A from "./_sections/A";
+import Footer from "./_sections/Footer";
+import IntercomWidget from "@/components/IntercomWidget";
+
 
 export const metadata: Metadata = {
   title: "HappyBingo - Responsible Gaming",
@@ -21,7 +23,7 @@ export type SectionType = {
 }
 
 export default function Page() {
-  const sectionClass = "min-h-screen border border-red-500 scroll-mt-16";
+  const sectionClass = "min-h-screen scroll-mt-16";
   return (
     <main>
       <Hero />
@@ -31,6 +33,7 @@ export default function Page() {
       <SupportAndHelplines sectionClass={sectionClass}  />
       <FAQs sectionClass={sectionClass} />
       <FairAndSafeGaming sectionClass={sectionClass} />
+      <Footer />
     </main>
   );
 }
