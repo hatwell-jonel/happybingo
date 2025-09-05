@@ -134,7 +134,7 @@ function Header() {
             }
             })
         },
-        mediaQuery.matches ? { threshold: 0.6 } : { rootMargin: "-30% 0px -50% 0px", threshold: 0 }
+        mediaQuery.matches ? { threshold: 0.3 } : { rootMargin: "-30% 0px -50% 0px", threshold: 0 }
         )
 
         items.forEach((item) => {
