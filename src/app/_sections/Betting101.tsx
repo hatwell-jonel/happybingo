@@ -43,7 +43,7 @@ export default function Betting101({ sectionClass }: SectionType) {
 
   return (
     <motion.section 
-      className={cn(sectionClass, "pt-10 pb-32" )}
+      className={cn(sectionClass, "pt-10 pb-16" )}
       id="betting-101"
       initial={{ opacity: 0, y: 40 }}        
       whileInView={{ opacity: 1, y: 0 }}    

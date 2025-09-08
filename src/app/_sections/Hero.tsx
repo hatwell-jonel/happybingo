@@ -32,10 +32,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen" id="hero">
-
-
-      
+    <section id="hero">
       <div className="container-center">
         
           <motion.p

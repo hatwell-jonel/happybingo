@@ -23,7 +23,7 @@ export type SectionType = {
 }
 
 export default function Page() {
-  const sectionClass = "min-h-screen scroll-mt-16";
+  const sectionClass = "scroll-mt-16";
   return (
     <main>
       <Hero />
